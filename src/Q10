@@ -1,0 +1,39 @@
+public class Main {
+
+    public static boolean contains(String result, char ch, int index) {
+
+        if (index == result.length()) {
+            return false;
+        }
+
+        if (result.charAt(index) == ch) {
+            return true;
+        }
+
+        return contains(result, ch, index + 1);
+    }
+
+    public static String removeDuplicates(String name, int index) {
+
+        if (index == name.length()) {
+            return "";
+        }
+
+        char ch = name.charAt(index);
+
+        String remaining = removeDuplicates(name, index + 1);
+
+        if (contains(remaining, ch, 0)) {
+            return remaining;
+        }
+
+        return ch + remaining;
+    }
+
+    public static void main(String[] args) {
+
+        String name = "banana";
+
+        System.out.println(removeDuplicates(name, 0));
+    }
+}
