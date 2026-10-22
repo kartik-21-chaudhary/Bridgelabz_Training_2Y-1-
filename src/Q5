@@ -1,0 +1,20 @@
+public class Main {
+
+    public static void printCharacters(int index, String name) {
+
+        if (index == name.length()) {
+            return;
+        }
+
+        System.out.println(name.charAt(index));
+
+        printCharacters(index + 1, name);
+    }
+
+    public static void main(String[] args) {
+
+        String name = "Hello";
+
+        printCharacters(0, name);
+    }
+}
