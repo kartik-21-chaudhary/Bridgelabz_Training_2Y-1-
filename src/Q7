@@ -1,0 +1,24 @@
+public class Main {
+
+    public static String replaceA(String name, int index) {
+
+        if (index == name.length()) {
+            return "";
+        }
+
+        char ch = name.charAt(index);
+
+        if (ch == 'a') {
+            ch = 'b';
+        }
+
+        return ch + replaceA(name, index + 1);
+    }
+
+    public static void main(String[] args) {
+
+        String name = "banana";
+
+        System.out.println(replaceA(name, 0));
+    }
+}
