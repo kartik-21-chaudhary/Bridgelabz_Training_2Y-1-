@@ -1,0 +1,22 @@
+public class Main {
+
+    public static int countCharacter(String name, int index, char target) {
+
+        if (index == name.length()) {
+            return 0;
+        }
+
+        if (name.charAt(index) == target) {
+            return 1 + countCharacter(name, index + 1, target);
+        }
+
+        return countCharacter(name, index + 1, target);
+    }
+
+    public static void main(String[] args) {
+
+        String name = "banana";
+
+        System.out.println(countCharacter(name, 0, 'a'));
+    }
+}
